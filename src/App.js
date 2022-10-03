@@ -3,7 +3,6 @@ import * as Yup from "yup";
 import moment from "moment";
 
 import Input from "./components/Input";
-import { useState } from "react";
 
 export const App = () => {
     const formik = useFormik({
@@ -60,7 +59,10 @@ export const App = () => {
     console.log(formik);
     return (
         <>
-            <form onSubmit={formik.handleSubmit}>
+            <form
+                className="flex flex-col items-center"
+                onSubmit={formik.handleSubmit}
+            >
                 <Input
                     type="email"
                     name="email"
@@ -134,7 +136,11 @@ export const App = () => {
                     isDisabled={formik.isSubmitting}
                 />
 
-                <button type="submit" disabled={formik.isSubmitting}>
+                <button
+                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    type="submit"
+                    disabled={formik.isSubmitting}
+                >
                     Envoyer
                 </button>
             </form>
